@@ -28,7 +28,7 @@ class Main extends React.Component{
     render(){
         return(
         <main>
-        <div className="searchAndInput">
+        <form className="searchAndInput">
             <input 
             type="text"
             name="term"
@@ -54,9 +54,9 @@ class Main extends React.Component{
                 value={this.state.requier}
                 onChange={this.handleChange}
                 />
-                    Requers test project
+                    Requiers test project
             </label>
-        </div>
+        </form>
             <Table {...this.state}/>
             <Footer/>
         </main>
