@@ -11,10 +11,9 @@ class Main extends React.Component{
             requier: false
         
         }
-        this.handleChange = this.handleChange.bind(this)   
     }
 
-    handleChange(event){
+    handleChange =(event) =>{
         const { name,value, type, checked} =event.target 
         type === "checkbox" ? this.setState({
                   [name]: checked   
