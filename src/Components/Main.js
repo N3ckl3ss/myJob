@@ -8,8 +8,14 @@ class Main extends React.Component{
         this.state = {
             term: "",
             search: "",
-            requier: false
-        
+            requier: false,
+            tableContent: [{
+                id:"",
+                name:"",
+                requiers: false
+            }]
+               
+           
         }
     }
 
@@ -24,11 +30,24 @@ class Main extends React.Component{
           })
 
     }
-    
+    handelClikc =(event)=>{
+        this.setState({
+            tableContent:{
+                name : this.state.term,
+                requires: this.state.requier
+            }
+        })
+        console.log(this.state.tableContent)        
+    }
+
+    handleSubmit = (event) =>{
+        event.preventDefault()
+
+    }
     render(){
         return(
         <main>
-        <form className="searchAndInput">
+        <form className="searchAndInput" onSubmit={this.handleSubmit}>
             <input 
             type="text"
             name="term"
@@ -36,7 +55,7 @@ class Main extends React.Component{
             value={this.state.term}
             onChange={this.handleChange}
             />
-            <button>Add</button>
+            <button onClick={this.handelClikc}>Add</button>
         <br/>
             <input 
             type="text"
@@ -57,7 +76,7 @@ class Main extends React.Component{
                     Requiers test project
             </label>
         </form>
-            <Table {...this.state}/>
+            <Table {...this.state.tableContent}/>
             <Footer/>
         </main>
         )
