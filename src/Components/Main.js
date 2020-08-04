@@ -36,8 +36,12 @@ class Main extends React.Component{
                 name : this.state.term,
                 requires: this.state.requier
             }
-        })
-        console.log(this.state.tableContent)        
+        })       
+    }
+    handleEnter =(key) =>{
+        if(key === 'Enter'){
+            this.handelClikc
+        }
     }
 
     handleSubmit = (event) =>{

@@ -1,13 +1,13 @@
 import React from "react"
 
-class Table extends React.Component{
+function Table(){
 
-    render(){
+    const [jobs, setJobs] = useState([])
+
         return(
-        <h3>{this.props.name}</h3>
+        <h3>{props.name}</h3>
          
         )
-    }
 }
 
 export default Table
